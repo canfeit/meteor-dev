@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER Rick Golden "golden@golden-garage.net"
+MAINTAINER Rick Golden
 
 # build arguments
 ARG APP_PACKAGES
