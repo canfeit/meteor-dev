@@ -25,7 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get autoremove
 RUN DEBIAN_FRONTEND=noninteractive apt-get clean
 
 # set the locale (required by Meteor)
-RUN localedef ${APP_LOCALE}.${APP_CHARSET} -i ${APP_LOCALE} -f ${APP_CHARSET}
+# RUN localedef ${APP_LOCALE}.${APP_CHARSET} -i ${APP_LOCALE} -f ${APP_CHARSET}
 
 # create a non-root user that can write to /usr/local (required by Meteor)
 RUN useradd -mUd ${APP_USER_DIR} ${APP_USER}
