@@ -28,9 +28,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get clean
 # RUN localedef ${APP_LOCALE}.${APP_CHARSET} -i ${APP_LOCALE} -f ${APP_CHARSET}
 
 # create a non-root user that can write to /usr/local (required by Meteor)
-RUN useradd -mUd ${APP_USER_DIR} ${APP_USER}
-RUN chown -Rh ${APP_USER} /usr/local
-USER ${APP_USER}
+# RUN useradd -mUd ${APP_USER_DIR} ${APP_USER}
+# RUN chown -Rh ${APP_USER} /usr/local
+# USER ${APP_USER}
 
 # install Meteor
 RUN curl https://install.meteor.com/ | sh
