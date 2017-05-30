@@ -37,4 +37,4 @@ RUN curl https://install.meteor.com/ | sh
 
 # run Meteor from the app directory
 WORKDIR ${APP_ROOT}
-ENTRYPOINT [ "/usr/local/bin/meteor" ]
+# ENTRYPOINT [ "/usr/local/bin/meteor" ]
