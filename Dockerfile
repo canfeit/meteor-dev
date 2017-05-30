@@ -1,6 +1,6 @@
 FROM ubuntu:devel
 
-MAINTAINER Rick Golden
+MAINTAINER canfeit
 
 # build arguments
 ARG APP_PACKAGES
