@@ -17,10 +17,12 @@ ENV APP_ROOT=${APP_ROOT:-/app}
 EXPOSE $APP_PORT
 VOLUME $APP_ROOT
 
+ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /
+
 # add packages for building NPM modules (required by Meteor)
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y locales curl python build-essential ${APP_PACKAGES}
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y locales curl python build-essential git ttf-dejavu openjdk-8-jre ${APP_PACKAGES}
 RUN DEBIAN_FRONTEND=noninteractive apt-get autoremove
 RUN DEBIAN_FRONTEND=noninteractive apt-get clean
 
@@ -39,3 +41,4 @@ RUN curl https://install.meteor.com/ | sh
 # run Meteor from the app directory
 WORKDIR ${APP_ROOT}
 # ENTRYPOINT [ "/usr/local/bin/meteor" ]
+CMD ["java", "-jar", "/jenkins.war"]
