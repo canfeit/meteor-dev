@@ -1,6 +1,6 @@
 FROM ubuntu:devel
 
-MAINTAINER canfeit
+MAINTAINER wangjh <wangjianhui@herebookstore.com>
 
 # build arguments
 ARG APP_PACKAGES
